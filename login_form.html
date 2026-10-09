@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            background-color: rgb(59, 83, 39);
+            color: black;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-card {
+            padding: 30px 40px;
+            width: 100%;
+            max-width: 320px;
+            border: 1px solid #ccc;
+            border-radius: 40px;
+            background-color: #ccc;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+            
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: white;
+            color: black;
+            box-sizing: border-box;
+            border-radius: 25px;
+            
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #11a33a00;
+            color: rgb(59, 83, 39);
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            border-radius: 20px;
+            border: 2px solid;
+            transition: 0.5s;
+        }
+        button:hover{
+            background-color: rgb(59, 83, 39);
+            color:#fbfffc;
+            cursor: pointer;
+        }
+        a {
+            text-decoration: none;
+            color: rgb(102, 161, 53);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-card">
+        <h2>Sign In</h2>
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required placeholder="Enter your username">
+            </div>
+            
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required placeholder="Enter your password">
+                <p class="register">Don't have an account yet? <a href="registration_form.html">Register</a></p>
+            </div>
+            
+            <button type="submit">Log In</button>
+            
+        </form>
+        
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            
+            const usernameInput = document.getElementById('username').value;
+            const passwordInput = document.getElementById('password').value;
+
+            if (usernameInput === 'admin' && passwordInput === 'admin123') {
+                window.location.href = 'index.html';
+            } else {
+                alert('Incorrect username or password. Please try again.');
+            }
+        });
+    </script>
+
+</body>
+</html>
